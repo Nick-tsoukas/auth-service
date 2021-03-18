@@ -1,7 +1,19 @@
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://127.0.0.1:27017/authapp', {
-    useNewUrlParser: true,
-    useCreateIndex: true,
-    useFindAndModify: false
-});
+let con = async () => {
+    try {
+        await mongoose.connect('mongodb://127.0.0.1/auth', {
+            useNewUrlParser: true,
+            useCreateIndex: true,
+            useFindAndModify: false
+        });
+        console.log("connected to the database");
+    } catch(error) {
+        console.log(error)
+    }
+}
+
+con();
+
+
+
