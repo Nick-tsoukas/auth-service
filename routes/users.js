@@ -88,21 +88,4 @@ router.post(
   );
 
 
-router.get('/users', async (req,res) => {
-    try{
-        User.find();
-    } catch (error) {
-        res.status(500).send("Sorry there was and error : ", error);
-    }
-});
-
-router.post('/users', async (req,res) => {
-
-    try{
-        console.log(req.body.username, ' ' , req.body.password)
-    } catch (error) {
-        res.status(404).send("Sorry ... there was a problem ", error)
-    }
-})
-
 module.exports = router;
